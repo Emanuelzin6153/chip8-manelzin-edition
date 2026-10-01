@@ -239,18 +239,18 @@ The generated binary can then be executed with the emulator:
 
 ```text
 .
-├── asm/                  # Ficheiros fonte em Assembly para testes e exemplos (.s)
+├── asm/                  # Assembly source files for tests and examples (.s)
 ├── assets/
-│   ├── preview/          # Capturas de ecrã para pré-visualização das ROMs
-│   └── tests/            # Suíte de testes em ROM (corax+, flags, keypad, beep)
-├── docs/                 # Documentação técnica (especificação do CASM)
-├── include/              # Ficheiros de cabeçalho C/C++ (.h)
-├── src/                  # Código-fonte do emulador (CEMU) e do assembler (CASM)
-├── .asm-lsp.toml         # Configuração do Language Server Protocol para Assembly
-├── Makefile              # Script de automatização da compilação
-├── README.md             # Documentação principal do projeto
-└── TODO.md               # Roteiro de
-desenvolvimento e tarefas pendentes
+│   ├── preview/          # ROM preview screenshots
+│   └── tests/            # ROM test suite (corax+, flags, keypad, beep)
+├── docs/                 # Technical documentation (CASM specification)
+├── include/              # C/C++ header files (.h)
+├── src/                  # Source code for emulator (CEMU) and assembler (CASM)
+├── .asm-lsp.toml         # Assembly Language Server Protocol configuration
+├── Makefile              # Build automation script
+├── README.md             # Main project documentation
+└── TODO.md               # Development roadmap and pending tasks
+
 
 ```
 
