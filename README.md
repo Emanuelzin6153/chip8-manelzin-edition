@@ -250,8 +250,6 @@ The generated binary can then be executed with the emulator:
 ├── Makefile              # Build automation script
 ├── README.md             # Main project documentation
 └── TODO.md               # Development roadmap and pending tasks
-
-
 ```
 
 # Contributing
