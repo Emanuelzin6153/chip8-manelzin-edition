@@ -1,56 +1,57 @@
-# CHIP-8 - Emulador & Assembler
+CHIP8 - Emulator & Assembler
+In this repository is my implementation of an emulator along with an assembler created for CHIP-8. The emulator is responsible for simulating the hardware on which this interpreted language originally ran, while the assembler can be used to translate code written in a specific Assembly syntax into executables compatible with the CHIP-8 VM.
 
-Neste repositório encontra-se a implementação de um emulador em conjunto com um *assembler* criado para a arquitetura CHIP-8. O emulador é responsável por simular o hardware no qual esta linguagem interpretada corria originalmente, enquanto o *assembler* é utilizado para traduzir código escrito numa sintaxe Assembly específica para executáveis compatíveis com a VM do CHIP-8.
+Table of contents
+What is CHIP-8?
+VM Description
+Emulator (CEMU)
+Features
+Preview
+Tests
+Assembler (CASM)
+Example ROMs
+Usage
+Requirements
+Dependency instalation
+Cloning the repository
+Building
+CEMU
+Options
+Usage
+CASM
+Options
+Usage
+Contributing
+License
+What is CHIP-8?
+CHIP-8 is an interpreted language that was developed by Joseph Weisbecker in 1970s, with the main goal of being simpler than machine code itself, while still being efficient in terms of resource consumption. Its simplicity combined with efficiency led the community to adopt its use, especially in the context of game development and recreation.
+
+VM Description
+Memory: 4KB (4,096 bytes)
+Registers:
+16x 8-bit GPRs (V0..V15 or V0..VF)
+1x 12-bit index register to point at addresses
+Stack: used to store the PC (Program Counter) address when a subroutine is called, so the execution resumes at that address after the subroutine returns
+Timers: 2 8-bit timers
+Delay timer (DT): used for timing in game events
+Sound timer (ST): used for sound effects
+Graphics: a 64x32 (2,048 pixels) monochromatic screen
+Sound: when the ST value is nonzero, a beeping sound is made
+Opcodes: original CHIP-8 has 35 opcodes, which are all two bytes long stored in big-endian at memory
+Warning
 
 ---
 
-# Índice
-
-- [O que é o CHIP-8?](#o-que-é-o-chip-8)
-  - [Descrição da VM](#descrição-da-vm)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Emulador (CEMU)](#emulador-cemu)
-  - [Funcionalidades](#funcionalidades)
-  - [Pré-visualização](#pré-visualização)
-  - [Testes](#testes)
-- [Assembler (CASM)](#assembler-casm)
-  - [ROMs de Exemplo](#roms-de-exemplo)
-- [Utilização](#utilização)
-  - [Requisitos](#requisitos)
-  - [Instalação de Dependências](#instalação-de-dependências)
-  - [Clonar o Repositório](#clonar-o-repositório)
-  - [Compilação](#compilação)
-  - [CEMU](#cemu)
-    - [Opções](#opções)
-    - [Exemplos de Utilização](#exemplos-de-utilização)
-  - [CASM](#casm)
-    - [Opções](#opções-1)
-    - [Exemplos de Utilização](#exemplos-de-utilização-1)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+In this project, I implemented 34 of the 35 original instructions, given that the unimplemented instruction (0NNN, or sys) was used to execute machine code outside the Chip-8 interpreter, something that would not be useful in this context and is not required for most ROMs.
 
 ---
 
-# O que é o CHIP-8?
-
-O CHIP-8 é uma linguagem interpretada desenvolvida por Joseph Weisbecker na década de 1970, com o objetivo principal de ser mais simples do que o código de máquina nativo, mantendo-se eficiente em termos de consumo de recursos. A sua simplicidade e eficiência levaram a comunidade a adotá-la, especialmente no contexto do desenvolvimento e recriação de jogos.
-
-## Descrição da VM
-
-- **Memória:** 4KB (4.096 bytes)
-- **Registadores:** 
-  - 16x registadores de uso geral de 8 bits (V0..V15 ou V0..VF)
-  - 1x registador de índice de 12 bits para apontar para endereços de memória
-- **Pilha (*Stack*):** utilizada para armazenar o endereço do PC (*Program Counter*) aquando da chamada de uma subrotina, permitindo retomar a execução nesse endereço após o retorno
-- **Temporizadores:** 2 temporizadores de 8 bits
-  - **Temporizador de Atraso (*Delay Timer - DT*):** utilizado para temporização de eventos no jogo
-  - **Temporizador de Som (*Sound Timer - ST*):** utilizado para efeitos sonoros
-- **Gráficos:** ecrã monocromático de 64x32 pixéis (2.048 pixéis no total)
-- **Som:** emissão de um sinal sonoro (*beep*) quando o valor do registador ST é superior a zero
-- **Opcodes:** o CHIP-8 original possui 35 opcodes, todos com 2 bytes de comprimento armazenados em [Big-Endian](https://en.wikipedia.org/wiki/Endianness) na memória
-
-> [!WARNING]
-> Neste projeto foram implementadas 34 das 35 instruções originais. A instrução não implementada (`0NNN`, ou `sys`) era utilizada para executar código de máquina fora do interpretador CHIP-8, algo que não é útil neste contexto nem necessário para a esmagadora maioria das ROMs existentes.
+Emulator (CEMU)
+Features
+Configurable emulator (IPS, window, audio...).
+Well optimized, the ROMs I tested ran smoothly.
+Reset key (ESC) to restart the the emulator.
+Debugger (not implemented yet)
 
 ---
 
