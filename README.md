@@ -234,17 +234,8 @@ The generated binary can then be executed with the emulator:
 ./bin/cemu ./roms/my_roms/pong.ch8
 ```
 
-# Contributing
 
-Contributions are always welcome! If you find a bug or would like to suggest a new feature, open an issue at GitHub. If you would like to contribute to this project, fork the repository and submit a pull request.
-
-# License
-
-This project is licensed under the MIT License. See **[LICENSE](./LICENSE)** for full license text.
-
----
-
-# Estrutura do Projeto
+# Project Structure
 
 ```text
 .
@@ -258,6 +249,15 @@ This project is licensed under the MIT License. See **[LICENSE](./LICENSE)** for
 ├── .asm-lsp.toml         # Configuração do Language Server Protocol para Assembly
 ├── Makefile              # Script de automatização da compilação
 ├── README.md             # Documentação principal do projeto
-└── TODO.md               # Roteiro de desenvolvimento e tarefas pendentes
+└── TODO.md               # Roteiro de
+desenvolvimento e tarefas pendentes
 
+```
 
+# Contributing
+
+Contributions are always welcome! If you find a bug or would like to suggest a new feature, open an issue at GitHub. If you would like to contribute to this project, fork the repository and submit a pull request.
+
+# License
+
+This project is licensed under the MIT License. See **[LICENSE](./LICENSE)** for full license text.
