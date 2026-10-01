@@ -234,7 +234,6 @@ The generated binary can then be executed with the emulator:
 ./bin/cemu ./roms/my_roms/pong.ch8
 ```
 
-
 # Project Structure
 
 ```text
@@ -243,9 +242,10 @@ The generated binary can then be executed with the emulator:
 ├── assets/
 │   ├── preview/          # ROM preview screenshots
 │   └── tests/            # ROM test suite (corax+, flags, keypad, beep)
+├── casm/                 # Assembler source code and headers (casm/src, casm/include)
+├── cemu/                 # Emulator source code and headers (cemu/src, cemu/include)
 ├── docs/                 # Technical documentation (CASM specification)
-├── include/              # C/C++ header files (.h)
-├── src/                  # Source code for emulator (CEMU) and assembler (CASM)
+├── roms/                 # CHIP-8 games and applications ROMs
 ├── .asm-lsp.toml         # Assembly Language Server Protocol configuration
 ├── Makefile              # Build automation script
 ├── README.md             # Main project documentation
